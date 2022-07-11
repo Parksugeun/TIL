@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 
+		css : Cascade Style Sheet
+		1. inline : 태그에 직접 스타일 적용
+		2. internal : <style>태그를 이용하여 스타일시트 모아 놓은 스타일
+		3. external : 외부스타일 시트, 스타일시트코드만 있는 파일이 존재한다.
+	
+	 -->
+ 	<style>
+ 		/* 주석 
+ 		
+ 			선택자 {
+	 			속성:속성값;
+	 			속성:속성값;
+ 			}
+ 		*/
+ 		/*태그선택자*/
+ 		span{
+ 			color:#00f; /* #0000ff  #fff 검정색 #000흰색 */
+ 			font-weight: bold; /* 100,200,300,400,500,*/
+ 			font-size:30px;/* 기본크기 : 16px  */
+ 		}
+ 		/*아이디 선택자*/
+ 		#txt{
+ 			background:#ddd; /* #dddddd */
+ 		}
+ 		/*클래스선택자*/
+ 		.a{
+ 			background:#8a3;color:#fff;font-size:50px; /* #88aa33 */
+ 		}
+ 	</style>
+</head>
+<body>
+멀티 제품은<span class="a">개인적으로</span> 초기 모델의 <i class="a">단점을</i> 완벽하게 커버해 준 제품이었죠. 
+연타가 가능하면서 <span id="txt"> 휴대하기 간편하고,</span> 주머니에 휴대하기가 편하니 
+다른 곳에 두고 다니지 않아서 <span class="a"> 겨울에도 빨간불이 들어오지는 않았습니다.</span> 
+가끔 빨간불 들어오는 <b>경우는 있지만</b> 자체적으로 버튼 <strong>오래 누르면</strong> 해결되기도 하구요.
+</body>
+</html>
