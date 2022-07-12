@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*자손선택자*/
+	#mainDiv>ul{
+		border:5px solid green;
+	}
+	/*후손 선택자*/
+	#mainDiv h2{ /* #mainDiv>ul h2 */
+		color:red;
+	}
+	ul>li:hover{
+		background-color:pink;
+	}
+	#mainDiv li:active{
+		color:blue; font-size: 1.2em;
+	}
+	/*동위선택자
+		선택자A + 선택자B:선택자A의 바로 다음에 있는 선택자B를 선택한다.
+		선택자A~ 선택자B: 선택자A 다음의 모든 선택자들B를 선택한다.
+	*/
+	h1+h2{
+		background-color:lightblue;
+	}
+	h1~h2{
+		background-color:#ddd;
+	}
+</style>
+</head>
+<body>
+	<div id="testDiv">
+		<h1>동위선택자 테스트 11111</h1>
+		<h2>동위선택자 테스트 22222</h2>
+		<h2>동위선택자 테스트 33333</h2>
+		<h2>동위선택자 테스트 44444</h2>
+		<h2>동위선택자 테스트 55555</h2>
+		<h2>동위선택자 테스트 66666</h2>
+		<h3>~~~~~~~~~~~~~~~~~~</h3>
+		
+		<h1>동위선택자 테스트 11111</h1>
+		<h2>동위선택자 테스트 22222</h2>
+		<h2>동위선택자 테스트 33333</h2>
+		<h2>동위선택자 테스트 44444</h2>
+		<h2>동위선택자 테스트 55555</h2>
+		<h2>동위선택자 테스트 66666</h2>
+		<h3>~~~~~~~~~~~~~~~~~~</h3>
+	</div>
+	<h1>자손선택자, 후손선택자</h1>
+	<div id="mainDiv">
+		<ul>
+		<li>자손선택자, 후손선택자1 </li>
+		<li>자손선택자, 후손선택자2 </li>
+		<li>자손선택자, 후손선택자3 </li>
+		<li>자손선택자, 후손선택자4 
+			<h2>반응선택자...</h2>
+			</li>
+		<li>자손선택자, 후손선택자5 </li>
+	
+	</ul>
+</div>
+<ul>
+		<li>자손선택자, 후손선택자1 </li>
+		<li>자손선택자, 후손선택자2 </li>
+		<li>자손선택자, 후손선택자3 </li>
+		<li>자손선택자, 후손선택자4 
+			<h2>반응선택자...</h2>
+			</li>
+		<li>자손선택자, 후손선택자5 </li>
+	
+	</ul>
+</body>
+</html>

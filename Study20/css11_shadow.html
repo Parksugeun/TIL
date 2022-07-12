@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#d1{
+		width:400px; height:80px; border:1px solid gray; font-size:3em; 
+		line-height:80px; margin:20px auto; text-align:center;
+	}
+	
+	/* 글자 그림자 설정*/
+	#txt{
+		/*		왼쪽, 오른쪽	위,아래	투명도  색상	 */
+		text-shadow:-5px  	-5px     5px   red;
+	}
+	#box{
+		box-shadow:10px 10px 10px #ccc;
+	}
+	/*그라데이션
+		http://colorzilla.com/gradient-editor
+	*/
+	div:first-child{
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e1ffff+0,e1ffff+7,e1ffff+12,fdffff+12,e6f8fd+30,e1ffff+47,c8eefb+54,bee4f8+75,b1d8f5+100 */
+background: #e1ffff; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #fdffff 12%, #e6f8fd 30%, #e1ffff 47%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#e1ffff 47%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#e1ffff 47%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		
+	}
+</style>
+</head>
+<body>
+<div>
+담원 기아와 디알엑스는 7일 서울 종로구 그랑서울 LCK아레나에서 열릴 
+2022 리그 오브 레전드 챔피언스 코리아 서머 1라운드 맞대결을 앞두고 선발 명단을 발표했다.
+</div>
+<div id="d1">
+	<div id="txt">글자 그림자</div>
+	<div id="box">박스 그림자</div>
+</div>
+</body>
+</html>

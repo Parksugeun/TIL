@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--                                                            0~10사이값 -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<style>
+	ul,li{margin:0; padding:0; list-style-type:none;}
+	li{
+		margin:5px 0; background:lightblue; float:left; width:100%;
+	}
+	/* media쿼리를 이용하여 반응형 스타일 지정 */
+	
+	/* 디스플레이 종류 : all, screen, print, tv, projection,...*/
+	@media all and (min-width:320px) and (max-width:600px){
+		li{background-color:yellow;}
+			img{display:block;}
+	} 
+	@media all and (min-width:601px) and (max-width:800px){
+		li{background-color:pink;}
+		img{display:none;}
+	}
+	@media all and (min-width:801px){
+		li{background-color:orange; color:#fff;}
+		img{display:block;}
+	}
+</style>
+</head>
+<body>
+<ul>
+	<li>DRX는 7일 서울 종로구 LCK 아레나에서 열린 ‘2022 LoL 챔피언스 코리아(LCK)’</li>
+	<li>서머 시즌 정규 리그 1라운드 경기에서 담원 기아에 2대 1로 승리했다.</li>
+	<li> 5승2패(+5)로 담원 기아(4승3패 +4)를 제치고 3위에 올랐다.</li>
+	<li>담원 기아는 5위로 내려갔다.</li>
+	<li>담원 기아는 5위로 내려갔다.</li>
+	<li>담원 기아는 5위로 내려갔다.</li>
+	<li><img src="../img/02.jpg"/></li>
+  
+</ul>
+</body>
+</html>

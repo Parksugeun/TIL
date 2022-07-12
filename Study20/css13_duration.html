@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+		overflow 속성 : auto, scroll, hidden
+		
+	*/
+
+	div{
+	 	border:1px solid gray;
+	 	width:500px; height:500px;
+	 	overflow:hidden;
+		
+		/*객체의 움직임 속도를 정한다.*/
+		transition-duration:3s; 
+		opacity:1;
+	}
+	div>img{width:100%; height:600px;}
+	
+	/* checkbox를 체크하면 div컨텐츠 안보이게 설정한다.*/
+	/*input[type=checkbox]:checked 와 #chk:checked 는 동일 */
+	#chk:checked + div{
+		height:0px;
+		width:0px;
+		opacity:0;
+	}
+</style>
+</head>
+<body>
+<input type="checkbox" id="chk"/>클릭
+<div>
+	<img src="../img/04.jpg"/>
+</div>
+</body>
+</html>

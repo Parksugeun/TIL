@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width:300px; height:300px; /*float:left;*/
+	}
+	#d1{background:pink;}
+	#d2{background:lightblue;}
+	#d3{background:orange;}
+	#d4{background:cyan;}
+	
+	/* visibility 속성 : 선택된 객체를 보여주거나 숨길 수 있다.
+						숨기더라도 공간을 유지하고 있다.
+			visible, hidden
+	*/
+	#d2{visibility:visible;}
+	/* display 속성 : 선택된 객체를 보여주거나 숨길수 있다.
+					 숨김상태에서 공간을 반납한다.
+			block, none
+	*/
+	#d3{
+		display:none;
+	}
+	/* position속성
+			absolute, relative, static:좌표, fixed
+	
+	   left, top, right, bottom
+	*/
+	#d2{
+		position:absolute;
+		left:250px; bottom:100px;
+	}
+	img{
+		position:fixed;
+		right:100px; top:100px;
+	}
+</style>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4"></div>
+<img src="../img/04.jpg" width="300"/>
+</body>
+</html>

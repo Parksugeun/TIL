@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*구조 선택자
+	
+		nth-child(2n)  : 짝수번째
+		nth-child(2n+1): 홀수번쨰
+		nth-child(3n) : 3의 배수번째
+	*/
+	#menu li:nth-child(3n){
+		background-color:pink;
+	}
+	#menu li:nth-child(3n+1){
+		background-color:lightblue;
+	}
+	#menu li:nth-child(3n+2){
+		background-color:#ddd;
+	}
+	/*
+		:first-child : 첫번째 객체
+		:last-child  : 마지막객체
+	*/
+	#menu li:first-child{
+		color:red;
+	}
+	#menu li:last-child{
+		color:lime;
+		font-size:1.2em;
+	}
+</style>
+</head>
+<!-- html속성
+	선택불가되도록 설정하기
+	oncontextmenu : 마우스 오른쪽 버튼 메뉴 제어
+	onselectstart, ondragstart : 드래그 시작 불가능
+	ondragend : 드래그 종료 불가능
+ -->
+<body oncontextmenu="return false" onselectstart="return false">
+<div id="menu">
+	<ul>
+		<li>뉴스</li>
+		<li>자동차</li>
+		<li>경제</li>
+		<li>시사</li>
+		<li>웹툰</li>
+		<li>푸드</li>
+		<li>지도</li>
+	</ul>
+</div>
+<style>
+	/*
+		:first-of-type
+		:last-of-type
+		:nth-of-type()
+	*/
+	#menu2 li:nth-of-type(2n){
+		background:yellow;
+	}
+	#menu2 li:nth-of-type(2n+1){
+		background:olive;
+		color:white;
+	}
+	#menu2 li:first-of-type{
+		background:green;
+	}
+	#menu2 li:last-of-type{
+		background:red;
+	}
+</style>
+<div id="menu2">
+	<ul>
+		<li>뉴스</li>
+		<li>자동차</li>
+		<li>경제</li>
+		<li>시사</li>
+		<li>웹툰</li>
+		<li>푸드</li>
+		<li>지도</li>
+	</ul>
+</div>
+<style>
+		/*
+			텍스트 스타일
+			::first-letter : 첫번째 문자에 대한 스타일
+			::first-line : 첫번쨰 줄에 대한 스타일
+			::selection : 선택영역에 대한 스타일
+		*/
+	#txt::first-letter{
+		font-size:1.5em;
+		color:green;
+		font-weight:bold;
+		background:yellow;
+	}
+	#txt::first-line{
+		background:#ddd;
+		text-decoration:underline;
+	}
+	#txt::selection{
+		color:red;
+		background:#000;
+	}
+</style>
+<div id="txt">
+젠지와 T1을 상대로 연패를 당했던 양대인 감독은 농심과 디알엑스와 
+펼치는 일전의 중요성을 거듭 강조한 바 있다. 우선 농심전을 이기고 한 고비는 넘겼다. 
+담원이 디알엑스를 상대로 시즌 5승 사냥에 나선다. 개막 주차를 2승으로 기분 좋게 
+시작했던 담원은 2주차 연패 이후 3주차 두 경기를 모두 승리하면서 4승 2패 득실 +5로 
+3위에 올라있다. 담원은 7일 서울 종로 롤파크 LCK아레나서 4승 2패 득실 +4로 4위에 
+랭크된 디알엑스와 일전을 치른다
+</div>
+</body>
+</html>

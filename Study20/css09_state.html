@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* 상태선택자
+		:focus : 커서가 컴퍼넌트에 들어가면
+	
+	*/
+	#userid:focus{
+		background:pink;
+	}
+	input:focus{
+		color:green; font-size:1.2em;
+	}
+	/*
+		:checked
+	
+	*/
+	input[type=checkbox]:checked{
+		width:50px; height:50px;
+	}
+	/*
+		:disabled : 비활성화된 컴퍼넌트에 스타일 적용
+	*/
+	input:disabled{
+		background-image:url(../img/04.jpg);
+		}
+	/*
+		:enabled : 활성화된 컴퍼넌트에 적용하기
+	*/
+	input:enabled{
+		font-size:1.5em;
+	}
+</style>
+</head>
+<body>
+<div id="memFrm" method="post" action="aaa.jsp">
+	<form>
+		<ul>
+			<li>아이디</li>
+			<li><input type="text" name="userid" id="userid" readonly/></li>
+			<li>이름</li>
+			<li><input type="text" name="username" id="username" disabled/></li>
+			<li>취미</li>
+			<li>
+				<input type="checkbox" name="hobby" value="등산" />등산
+				<input type="checkbox" name="hobby" value="걷기"/>걷기
+				<input type="checkbox" name="hobby" value="달리기"/>달리기
+				<input type="checkbox" name="hobby" value="놀기"/>놀기
+			</li>
+		</ul>
+	</form>
+</div>
+</body>
+</html>
