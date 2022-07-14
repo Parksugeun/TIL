@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼태그</title>
+</head>
+<body>
+<h1>클라이언트측에서 서버로 정보를 보낼준비를 한다.</h1>
+<pre>
+	method : 전송방식 (get, post)
+	action : 서버페이지 파일명
+</pre>
+
+<form method="get" action="write.jsp">
+	<input type="hidden" name="reno" value="564765"/>
+	<ul>
+		<li><label>아이디, 이름</label> : <input type="text" name="userid" size="30" value="goguma" maxlength="10" placeholder="아이디를 입력하세요" required/> </li>
+		<li>비밀번호 : <input type="password" name="userpwd" placeholder="비밀번호입력"/> </li>
+		<li>파일첨부 : <input type="file" name="filename"/> </li>
+		<li>체크박스 : <input type="checkbox" name="hobby" value="등산"/> 등산
+					<input type="checkbox" name="hobby" value="쇼핑" checked/> 쇼핑
+					<input type="checkbox" name="hobby" value="게임"/> 게임
+					<input type="checkbox" name="hobby" value="싸이클" checked/> 싸이클
+		</li>
+		<li>라디오버튼 : <input type="radio" name="gender" value="M"/> 남 
+					  <input type="radio" name="gender" value="F" checked/> 여
+		
+		</li>
+		<li> 관심분야 : <select name="interest" size="4" multiple>
+						 <option>독서 </option>	
+						 <option>영화감상 </option>
+						 <option>달리기 </option>
+						 <option>암벽등반 </option>
+						 <option>여행 </option>
+						 <option>축구 </option>
+					 </select>
+		</li>
+		<li>
+			optgroup태그 : <select>
+								<optgroup label="프론트앤드">
+								<option>HTML5</option>
+								<option>CSS3</option>
+								<option>JAVASCRIPT</option>
+								<option>JQUERY</option>
+								</optgroup>
+								<optgroup label="백엔드">
+								<option>JSP</option>
+								<option>SPRING</option>
+								</optgroup>
+						</select>	
+		</li>
+		<li>
+			여러줄의 문장 : <textarea name="intro" cols="50" rows="5">dddddd </textarea> 
+		</li>
+		<!--  -->
+		<li>date : <input type="date" name="date1"/> </li>
+		<li>datetime-local : <input type="datetime-Local" name="date2"/> </li>
+		<li>month : <input type="month" name="date3"/>   </li>
+		<li>week: <input type="week" name="date4"/>	 </li>
+		<li>color : <input type="color" name="color"/> </li>
+		<li>number : <input type="number" name="num" min="0" max="20" step="5" value="10"/> </li>
+		<li>range: <input type="range" name="num2" min="1" max="11" step="2" value="3"> </li>
+		<li>
+			<input type="submit" value="등록"/> 
+			<input type="image" src="../img/button.png"/>
+			<button>등록</button>
+			
+			<input type="button" value="등록"/>
+			<input type="reset" value="다시쓰기"/>
+			
+		</li>
+	</ul>
+</form>
+</body>
+</html>
