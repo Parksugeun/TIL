@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="text" name="username" id="username" value="홍길동"/>
+
+<div id="view"> </div>
+<img src="../img/02.jpg" width="100" height="100" id="i"/>
+<script>
+	/*스타일*/
+	document.getElementById("username").style.color ="orange";
+	document.getElementById("username").style.backgroundColor ='#5fd';
+	
+	var dom = document.getElementById("view");
+	dom.style.border = "1px solid red";
+	dom.style.width = "300px";
+	dom.style.height = "200px";
+	
+	/*태그 속성*/
+	var name = document.getElementById("username").value;
+	document.write("이름="+ name);
+	document.getElementById("username").value="이순신";
+	document.getElementById("i").src="../img/04.jpg";
+	
+	document.getElementById("username").type="checkbox";
+	
+	var tag = "<h1>javascript에서 태그 삽입</h1>";
+	tag +="<ol><li>코스모스</li><li>해바라기</li></ol>";
+	
+	document.getElementById("view").innerHTML = tag ;
+</script>
+</body>
+</html>

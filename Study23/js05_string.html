@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function stringTest(){
+		//		   01 23 45 67
+		var str = "자바스크립트 문자열 처리 함수";
+		
+		var tag="";
+		
+		tag += "length="+ str.length;
+		tag += "<br/>indexOf="+ str.indexOf("크");
+		tag += "<br/>search="+ str.search("크");
+		
+		// slice(index, index), substrinng(index, index), substr(index, count)
+		tag += "<br/>slice="+ str.slice(2,8);
+		tag += "<br/>substring="+ str.substring(2,8);
+		tag += "<br/>substr=" + str.substr(2,8);
+		
+		tag += "<br/>repalce="+ str.replace("스크립트","script");
+		
+		var str2 = "Hello! JavaScript...";
+		tag += "<br/>toUpperCase="+ str2.toUpperCase(str2);
+		tag += "<br/>toLowerCase="+ str2.toLowerCase(str2);
+		
+		tag += "<br/>concat="+ str.concat(str2);
+		tag += "<br/>charAt="+ str2.charAt(3);
+		tag += "<br/>charCodeAt"+ str2.charCodeAt(3);
+		
+		var txtArr = str2.split("a");
+		for(var idx = 0; idx<txtArr.length; idx++){
+			tag += "<br/>txtArr["+idx+"]="+ txtArr[idx];
+		}
+		
+		document.getElementById("view").innerHTML= tag; // outerHTML
+	
+	}
+</script>
+</head>
+<body>
+<div id="view"> </div>
+</body>
+</html>
+<script>
+	stringTest();
+</script>

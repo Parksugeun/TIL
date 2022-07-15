@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	/* 함수 생성하기
+		함수는 호출하여야 실행됨
+		
+	*/     
+	/*함수명([매개변수,매개변수,....])*/
+	function gugudan(){
+		var dan = document.getElementById("dan").value;
+		if(!isNaN(dan)){// is not a number 숫자가 아닐때 true , 숫자일때 false
+			var r = "<ul>";
+			for(var i=2; i<=9; i++){
+				r += "<li>"+dan+"*"+i+"="+(dan*i)+"</li>";
+			}
+			r +="</ul>";
+			console.log(r);
+			document.getElementById("result").innerHTML = r;
+		}else{
+			document.getElementById("result").innerHTML = "숫자가 아닙니다.";
+			}
+		}
+	var hap = function(a, b){
+		var h = a + b;
+		document.getElementById("result").innerHTML = h;
+	}
+	var cha = (a, b)=>{
+		var c = a - b;
+		console.log(c);
+	}	
+	//함수호출
+	//gugudan(9);
+	
+</script>
+</body>
+<input type="text" id="dan"/>
+<input type="button" value="클릭하세요." onclick="gugudan()"/>
+<input type="button" value="합" onclick="hap(10, 20)"/>
+<input type="button" value="차" onclick="cha(10, 20)"/>
+<div id="result"></div>
+<img src="../img/04.jpg"/>
+</html>

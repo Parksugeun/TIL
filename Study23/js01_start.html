@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//주석
+	/*여러줄 주석*/
+	// var, let, const
+	// 초기값에 의해서 데이터형이 정해진다. 초기값을 설정하지 않은 경우 undefined
+	var i=12.5; //i라는 변수 필요하면 다시 선언해도 된다.
+	let k; // 같은 블럭에서는 한번만 선언할 수 있다.
+	const x=10; //상수라는 뜻, 상수화 된 변수
+	
+	document.write(i+"<br/>");
+	document.write(k+"<br/>");
+	document.write(x+"<br/>");
+	
+	for(var i=1; i<=10; i++){
+		document.write("<img src='../img/02.jpg'>");
+	}
+</script>
+<style>
+	img{
+		width:100px; height:100px;
+	}
+</style>
+</head>
+<body>
+<h1>자바스크립트 시작하기</h1>
+<script type="text/javascript">
+	document.write('const->', x);
+</script>
+</body>
+</html>
