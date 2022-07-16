@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>배열 사용하기</h1>
+<script>
+	//배열을 선언할 때 
+	// 배열의 크기를 지정하지 않아도 된다.
+	// 데이터형 다른 데이터를 하나의 배열에 보관할 수 있다.
+	var arr = new Array();
+	
+	arr[2] = 150;
+	arr[5] = "홍길동";
+	arr[10] = 12.54;
+	document.write("arr="+ arr + "<br/>");
+	
+	var arr2 = new Array(1111,2222,3333,'aaaa','bbbb');
+	document.write("arr2="+ arr2+"<br/>");
+	
+	var arr3 =[23, 43, '가나다', '라마바'];
+	document.write("arr3="+ arr3+ "<br/>");
+
+	//배열에 데이터 추가하기 push : 마지막에 값추가
+	arr2.push("서울시 강남구");
+	document.write("arr2->"+ arr2+"<br/>");
+	
+	//join : 문자연결하기 
+	var txt = arr2.join("/"); //사이사이에 "/" 추가
+	document.write("arr2.join->"+ txt+"<br/>");
+	
+	// pop : 마지막 데이터 삭제하기
+	arr2.pop();
+	document.write("arr2.pop->"+ arr2+"<br/>");
+	
+	// 배열의 이동 
+	// shift(): 오른쪽데이터를 왼쪽으로 이동하고 0번쨰 index의 값은 지워진다.
+	// unshift(): 0번째 idex값에 데이터를 넣고 나머지는 오른쪽으로 이동한다.
+	arr2.shift();
+	document.write("arr2.shift->"+ arr2 + "<br/>");
+	
+	arr2.unshift("서울시 영등포구"); //2222,3333,aaaa,bbbb
+	document.write("arr2.unshift->"+ arr2 + "<br/>");// 서울시 영등포구,2222,3333,aaaa,bbbb 
+
+	// Json(javascript object notation)데이터 처리하기
+	var jData = {username : "홍길동", tel:"010-8384-0835", email:{firstemail:"luck97y@naver.com", 
+																secondemail:"24hours00@naver.com"
+																}, 
+														 gugudan: function(dan){
+																	var r="";		
+																	for(var i=2; i<=9; i++)	{
+																		r += dan+"*"+i+"="+ (dan*1)+"<br/>";
+																}
+																return r;
+																}
+															};
+	//Json 데이터 접근하기
+	document.write("username->"+ jData.username+"<br/>");
+	document.write("tel->"+ jData.tel+"<br/>");
+	document.write("email->"+ jData.email.firstemail,jData.email.secondemail+"<br/>");
+	document.write("gugudan-><br/>"+ jData.gugudan(3));
+	
+</script>
+</body>
+</html>

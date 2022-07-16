@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	var imgTag="";
+	var cnt=0;
+	function addImage(){
+		cnt++;
+		imgTag += "<img src='../img/04.jpg' width='100'/>"
+		document.getElementById("imgView").innerHTML = imgTag;	
+		//재귀호출
+		var timer = setTimeout('addImage()', 1000); 
+		if(cnt>10){
+			clearTimeout(timer);//반복호출 중지
+		}
+	}
+
+</script>
+</head>
+<body onload="addImage()">
+<h1>setTimeout을 이용한 반복실행 setTimeout을 이용한 반복실행</h1>
+<div id="imgView"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var setDateTime = function(){
+		//현재시스템의 날짜, 시간정보 얻어오기
+		
+		var now = new Date();
+	
+		document.getElementById("now").innerHTML = now;
+	
+		//날짜 변경
+		var now1 = new Date("2022.04.07");
+		var now2 = new Date(463464363434);//밀리초 1970년 1월 1일 0시 0분 0초 기준으로 계산
+		document.getElementById("result").innerHTML = now1+"<br/>"+now2;
+	
+		// 년 : getFullYear(), 월: gerMonth(), 일: getDate()
+		// 시 : getHours(), 	  분: getMinutes(),초: getSeconds()
+		// 요일 : getDay(), -> 일요일:0, 월요일:1,
+		
+		var tag = now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate();
+		tag += "" +now.getHours()+":"+ now.getMinutes()+":"+now.getSeconds();
+		tag += "("+ now.getDay()+")";
+		
+		document.querySelector("#view").innerHTML = tag;
+	}
+</script>
+</head>
+<body onload="setDateTime()">
+<h1>날짜와 시간</h1>
+<h1 id="now"></h1>
+<div id="result"></div>
+<div id="view"></div>
+</body>
+</html>
