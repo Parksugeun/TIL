@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	ul,li{
+		margin:0; padding:0; list-style-type:none;
+	}
+	#mainCal{
+		margin:10px auto;
+		width:440px;
+		padding:20px;
+		background:url(../img/03.jfif) no-repeat;
+		background-size:100% 500px;
+		border-radius:30px;
+	}
+	#timer, #cal{
+		background-color:#fff;
+		opacity:0.6;
+	}
+	/*시계*/
+	#timer{
+		font-size:2em;
+		text-align:center;
+		
+		line-height:50px;
+	}
+	/*달력*/
+	#cal{
+		overflow:auto;
+		margin-top:20px;
+	}
+	#cal>h2{
+		text-align:center;
+		
+	}
+	#cal>ul>li{
+		float:left;
+		width:14.28%;
+		text-align:center;
+		line-height:40px;
+		font-weight:bold;
+	}
+</style>
+<script>
+	var nowDate = new Date();
+	var imgName = ['01.jfif','02.jfif','03.jfif','04.jfif'];
+	//시간을 셋팅하기 위한 함수
+	function setTimer(){
+		var now = new Date();//년,월,일,시,분,초
+		var h = now.getHours();
+		var m = now.getMinutes();
+		var s = now.getSeconds();
+		
+		var showTime = "";
+		if(h<10) showTime += "0";
+		showTime += h+":";
+		if(m<10) showTime += "0";
+		showTime += m+":";
+		if(s<10) showTime += "0";
+		showTime += s;
+			
+		document.getElementById("timer").innerHTML = showTime;
+		
+		//배경이미지 변경
+		var srcImage = imgName[s%4];//
+		document.getElementById("mainCal").style.backgroundImage = "url(../img/"+srcImage+")";
+		
+	}
+	function setNowDate(){
+		// 이번달 1일에 대한 요일
+		var date = nowDate.getDate();
+		nowDate.setDate(1);// 1로 변경
+		var week = nowDate.getDay();// 요일구하기 일:0
+		var year = nowDate.getFullYear();// 년도구하기
+		var month = nowDate.getMonth()+1;// 월구하기
+		
+		nowDate = new Date(nowDate.getFullYear(), nowDate.getMonth()+1, 0);  //마지막 날은 별도의 함수가 존재하지 않는다.
+		var lastDay = nowDate.getDate();
+		
+		var tag = "<h2>"+year+"년"+ month+"월</h2>";
+		
+		//요일명 출력
+		tag += "<ul><li>일</li><li>월</li><li>화</li><li>수</li><li>목</li><li>금</li><li>토</li>";
+		//공백
+		for(var i=1; i<=week; i++){
+			tag += "<li>&nbsp</li>"
+		}
+		for(var d=1; d<=lastDay; d++){
+			if(d==date) {
+				tag += "<li style='background:yellow'>"+d+"<li>";
+			}else{
+				tag += "<li>"+d+"<li>";
+			}
+		}
+		tag += "</ul>";
+		console.log(tag);
+		document.getElementById("cal").innerHTML = tag;
+		
+	}
+	
+</script>
+</head>
+<body onload="setInterval('setTimer()', 1000); setNowDate();">
+<div id="mainCal">
+	<div id="timer">시간</div>
+	<script>
+		setTimer();
+	</script>
+	<div id="cal"></div>
+</div>
+</body>
+</html>

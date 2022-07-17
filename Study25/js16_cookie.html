@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function popup(){
+		//쿠키정보를 확인하여 팝업 띄우기
+		var cookie = document.cookie;// name=value; name=value
+		if(cookie.indexOf("pop=yes")==-1){
+			window.open("popup.html","w","width=400px, height=400px");
+		}
+	}
+</script>
+</head>
+<body onload="popup()">
+<img src="../img/02.jfif"/>
+</body>
+</html>

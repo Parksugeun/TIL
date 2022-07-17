@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{width:100%;}
+</style>
+<script>
+	//Close선택시 호출할 함수
+	function popupCookie(){
+		// 체크상태일 때는 : true, 체크가 안되있을 때 : false
+		var check = document.getElementById("chk").checked
+		if(check){//체크상태일 때
+			//쿠키를 기록해야 함
+			var now = new Date();
+			//				Name=value;
+			now.setDate(now.getDate()+1);
+			var cookieData = "pop=yes;path=/; expires="+now;
+			console.log(cookieData);
+			document.cookie = cookieData;
+			document.cookie = "notice=ok";
+		}
+		self.close();//window.close();
+	}
+</script>
+</head>
+<body>
+	<img src="../img/02.jfif"/>
+	<div>
+		<input type="checkbox" id="chk"/>하루동안 안보기
+		<button onclick="popupCookie()">Close</button>
+	</div>
+</body>
+</html>

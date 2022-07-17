@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body link="red" alink="green" vlink="orange">
+<a href="https://www.daum.net">다음 홈페이지</a>
+<a href="https://www.nate.com">네이트 홈페이지</a>
+<a href="https://www.jquery.com">제이쿼리 홈페이지</a><br/>
+<input type="text" name="userid" class="userid"/><br/>
+<input type="text" name="username" id="username"/><br/>
+<div style="background-color:#ddd;">
+	<script>
+		document.title = "자바스크립트에서 제목설정하기";
+		document.write("location=>"+ document.location);// 프로토콜, url, port, 경로, 파일명
+		document.write("<br/>URL=>"+ document.URL);
+		document.write("<br/>domain=>"+ document.domain);
+		document.write("<br/>lastModified=>"+ document.lastModified);
+		
+		document.bgColor="pink";
+		document.write("<br/>bgColor=>"+ document.bgColor);
+		
+		//링크 컬러설정
+		document.linkColor = "yellow";
+		document.write("<br/>linkColor=>"+ document.linkColor+"<br/>alinkColor=>"+ document.alinkColor+"<br/>vlinkColor=>"+document.vlinkColor);
+		
+		//쿠키
+		document.cookie = "값을 저장할 수 있다."
+		document.write("<br/>cookie=>", document.cookie);
+		
+		function domSelect(){
+			document.getElementById("username").value="홍길동";
+			document.querySelector("#username").value="세종대왕";
+			
+			document.getElementsByTagName("a")[1].title = "nate.com으로 이동합니다.";
+			document.getElementsByClassName("userid")[0].value= "hong gildong";
+			
+		}
+		domSelect();
+	</script>
+</div>
+</body>
+</html>
