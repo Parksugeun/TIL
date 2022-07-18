@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	function jsFunction(){
+		alert("클릭");
+	}
+	$(function(){
+		//속성선택자
+		
+		// A태그에 title속성이 있으면 선택
+		$('a[title]').css("background-color","yellow");
+		
+		//속성값으로 선택하기
+		$('a[href="https://www.nate.com"]').css("border","2px solid red");
+		
+		// ^ : 특정 값으로 시작하면
+		$('a[href^="http://"]').css("padding","20px").css('border','1px solid blue');
+		
+		// $ : 특정 값으로 끝나면
+		$('a[href$="com"]').css('background-color','orange');
+		
+		//* : 특정값이 포함되면
+		$('a[href*="a"]').css('background-color','green');
+	});
+</script>
+</head>
+<body>
+<ul>
+	<li><a href="https://www.daum.net">다음</a></li>
+	<li><a href="https://www.nate.com">네이트</a></li>
+	<li><a href="https://www.naver.com" title="nate홈으로 이동하기">네이버</a></li>
+	<li><a href="https://www.android.org">안드로이드</a></li>
+	<li><a href="mailto:aaaaa.nate.com">메일보내기</a></li>
+	<li><a href="https://www.w3schools.com" title="w3shool홈으로 이동하기">w3school</a></li>
+	<li><a href="javascript:jsFunction()">w3school</a></li>
+</ul>
+</body>
+</html>

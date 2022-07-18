@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		//상태선택자
+		
+		// : text -> 속성값이 text인 객체를 선택한다.
+		$(':text').css("background",'green');
+		// :checked -> 속성이 checked가 설정되어 있으면 선택한다.
+		$(':checked').css('width','40px').css('height','40px').prop('checked',false);
+		// :selected -> 속성이 selected가 설정되어 있으면 선택한다.
+		$(':selected').css('background','orange');//.prop('selected',false);
+		
+		//컨텐츠 선택자
+		// contains() : 특정한 문자가 포함되어 있으면 선택한다.
+		$("p:contains('탁빔')").css('background-color','pink');
+		// has() : 특정태그가 포함되는 경우 선택한다.
+		$("p:has('b')").css('color','green');
+		// not() : 특정선택자 제외한 나머지를 선택한다.
+		$("p:not(':first')").css('font-weight','bold');
+		// closest() : 조상선택자
+		$('b').closest('div').css('border','4px solid red');
+		// filter()
+		$('p').filter('.c1').css('color','orange');
+		
+		// contents() : 특정태그의 하위 내용이 다른 태그에 포함된 경우 하위태그를 선택한다.
+		$('p').contents().css('background-color','blue');
+		
+		// selectedIndex : 선택된 option의 index를 구한다.
+		// document.getElementById('username').value="";
+		$('#username').val($('#site').prop('selectedIndex'));
+		
+		if($('#tel').val()==""){// document.getElementById("tel").value
+			alert('전화번호를 입력하세요...');
+		}
+	});
+</script>
+</head>
+<body>
+<div>
+	<p>튀르키예(터키) 매체 '탁빔'은 15일(한국시간) "김민재가 나폴리로 간다.</p>
+	<b>페네르바체와 나폴리는</b> 이스탄불에서 협상을 벌였고 최종 합의에 다다를 것으로 보인다. 
+	<p class="c1">
+	공식 발표도 곧 있을 것"이라고 보도했다.</p>
+	<p class="c1">
+	튀르키예(터키) 매체은 15일(한국시간) <i>"김민재가 나폴리로 간다.</i>
+	페네르바체와 나폴리는 이스탄불에서 협상을 벌였고 최종 합의에 다다를 것으로 보인다. 
+	공식 발표도 곧 있을 것"이라고 보도했다.</p>
+</div>
+<hr/>
+<div>
+	<form>
+		이름 : <input type="text" name="username" id="username"/><br/>
+		연락처 : <input type="text" name="tel" id="tel"/><br/>
+		사용자 동의 여부 : <input type="radio" name="accept" value="yes" checked/>동의
+					  <input type="radio" name="accept" value="no"/>동의안함<br/>
+		자주가는 사이트 : <select size="4" id="site">
+						<option>==선택안함</option>
+						<option>네이트</option>
+						<option selected>다음</option>
+						<option>네이버</option>
+					 </select><br/>	
+		<input type="submit" value="등록"/>		 
+	</form>
+</div>
+</body>
+</html>

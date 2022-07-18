@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		//jquery
+		// jquery에서 스타일시트 사용하기
+		//태그선택자     속성,속성값   background-color, backgroundColor
+		$("body").css("background-color","#ddd");
+		//클래스 선택자
+		$(".c1").css("border", "1px solid red");
+		//아이디 선택자
+		$("#t1").css("background-color", "lightblue");
+		
+		// jquery에서 html속성 제어하기
+		// 속성=속성값
+		$("img").attr("src","../img/04.jfif"); 
+		$("#txt").attr("value","홍길동");
+		
+		//속성만 있는 경우  readonly, checked, slected, disabled, controls....
+		$("#txt").prop("readonly", true);
+	});
+</script>
+</head>
+<body>
+<input type="text id="txt"/><br/>
+<h1 class="c1">JQuery를 이용한 클래스 선택자 사용하기</h1>
+<h1 id="t1">JQuery를 이용한 아이디 선택자 사용하기</h1>
+<h1 class="c1">JQuery를 이용한 태그의 속성 사용하기</h1>
+<img src="../img/03.jfif"/>
+</body>
+</html>

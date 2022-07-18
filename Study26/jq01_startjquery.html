@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	jquery : 이벤트기반 자바스크립트 라이브러리이다.
+	
+	cdn방식으로 링크를 걸어서 사용
+	jquery.com -> 다운로드 -> cdn
+	
+ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	var a;
+	//alert("aaaa");
+	function f(){
+		var b;
+	}
+	//jquery는 제일 늦게 실행 , document가 로딩이 완료되면 ready이벤트에 의해 jquery가 실행된다.
+	// 선택자
+	/* 첫번째 방법
+	$(document).ready(function(){
+		//실행문;;
+		alert("jquery 실행됨");
+	});
+	  두번째 방법
+	jQuery(document).ready(function(){
+		alert("jQuery(document) 실행됨")
+	});
+	*/
+	$(function(){
+		alert("제이쿼리 실행됨...");
+	});
+</script>
+</head>
+<body>
+<h1>jquery 실행하기</h1>
+<script>
+	//alert("bbbb");
+</script>
+</body>
+</html>
