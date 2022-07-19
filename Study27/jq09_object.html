@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+	div{border:3px solid orange; margin:5px;}
+</style>
+<script>
+	$(function(){
+		//객체 감싸기
+		// wrap() : 선택자를 특정태그로 각각 감싼다.
+		$(".c1").wrap("<h1/>");// .c1 = 클래스 c1
+		
+		// wrapAll() : 선택자를 한번에 감싼다.
+		$(".c2").wrapAll("<div/>")
+		
+		// wrapInner() : 선택자의 안쪽을 특정태그로 묶는다.
+		$(".c2").wrapInner("<b/>");
+		
+		// unwrap() : 선택자의 부모를 지운다.
+		$('.c2').unwrap();
+		
+		// each() : 여러개의 객체를 순차적으로 적용(반복처리) 
+		//				idx=0,1,2,3,4,5,6  obj= li,li,li,li...
+		$("#list>li").each(function(idx, obj){
+			$(obj).html("<li>each() 함수를 이용한 반복실행...("+idx+")</li>");
+		});
+		
+		//map() : 배열을 이용한 반복실행
+		var arr=['달리기','걷기','마라톤','싸이클','스키','등산'];
+		var tag = "<select>";
+		
+		//배열명.map(function(data, index){});
+		arr.map(function(data, idx){
+			tag += "<option>"+data+"("+idx+")</option>";
+		});
+		
+		tag +="</select>";
+		//$("body").prepend(tag);
+		$("h1:fisrt").before(tag);
+	});
+</script>
+</head>
+<body>
+<div class="c1">객체조작 메소드 1</div>
+<div class="c1">객체조작 메소드 2</div>
+<div class="c2">객체조작 메소드 3</div>
+<div class="c2">객체조작 메소드 4</div>
+
+<ul id="list">
+	<li>객체 조작 메소드 AAAA</li>
+	<li>객체 조작 메소드 BBBB</li>
+	<li>객체 조작 메소드 CCCC</li>
+	<li>객체 조작 메소드 DDDD</li>
+	<li>객체 조작 메소드 EEEE</li>
+	<li>객체 조작 메소드 FFFF</li>
+	<li>객체 조작 메소드 GGGG</li>
+</ul>
+</body>
+</html>

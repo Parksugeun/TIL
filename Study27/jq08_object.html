@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+	ul,li{margin:0; padding:0;}
+	img{width:100px; height:100px;}
+	li{list-style-type:none; float:left; border:1px solid red; margin:4px; padding:4px;}
+</style>
+<script>
+	$(()=>{
+		// before() : 선택자 이전에 객체를 추가
+		$("#i").before("<li><img src='../img/04.jfif'/></li>");
+		// insertBefore() : 선택자 이전에 객체를 추가
+		// 내용           선택자
+		$("<li><img src='../img/02.jfif'/></li>").insertBefore("#i");
+		//after() : 선택자 다음에 객체를 추가
+		$("#i").after("<li><img src='../img/01.jfif'/></li>");
+		//insertAfter() : 선택자 다음에 객체를 추가
+		$("<li id='copy'><img src='../img/02.jpg'/></li>").insertAfter("#i");
+		// append() : 선택자의 내용중에 제일 마지막에
+		$('ul').append("<li><img src='../img/son.jfif'/></li>");
+		// appendTo() : 제일마지막에  내용, 선택자
+		$("<li><img src='../img/04.jpg'/></li>").appendTo('ul');
+		
+		// html()  $('ul').html("<li><img src='../img/02.jpg'/></li>")
+		// prepend(), prependTo() : 선택한 요소내에 제일 처음에 추가
+		$("ul").prepend("<li><img src='../img/jeju_map.jpg'/></li>");
+		$("<li><img src='../img/05.jpg'/></li>").prependTo('ul');
+		
+		//clone() : 요소 복사하기 -> 사용은 한번만 할 수 있다.
+		var element = $("#copy").clone();
+		element.attr("id",'copy2');
+		$('ul').prepend(element);
+		
+		// empty() : 선택자의 내용을 지우기
+		$("#copy").empty();
+		
+		// remove() : 선택자와 내용을 지우기
+		$("li:first").remove();
+		
+		//replaceAll(), replaceWith() : 선택자를 다른 객체로 치환
+		//$("<h1>replaceAll</h1>").replaceAll("#copy");
+		//$("#i").replaceWith("<h1>ReplaceWith</h1>");
+		setInterval('imgMove()', 1000);
+	});
+
+	function imgMove(){
+		$("li:first").appendTo("ul")
+	}
+</script>
+</head>
+<body>
+<ul>
+	<li id="i"><img src="../img/03.jfif"/></li>
+</ul>
+</body>
+</html>

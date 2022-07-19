@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+	.c1{border:2px solid red; width:200px; height:200px;}
+	.c2{border:2px solid blue; width:200px; height:200px;}
+	.c3{border:2px solid green; width:200px; height:200px;}
+	.c4{border:2px solid orange; width:200px; height:200px;}
+</style>
+<script>
+	$(()=>{
+		// html() : 특정객체에 html태그를 추가한다. => innerHTML
+		var tag = "<a href=''>다음</a>을 클릭하시면 페이지가 이동합니다.";
+		$('#result').html(tag);
+		
+		console.log( $('#result').html() );
+		
+		// text() : 특정객체에 문자를 추가한다.
+		var tag2 = "<div>text()속성 연습중</div>"
+		$("#result").text(tag2);
+		
+		console.log( $('a').text());
+		
+		$('h2').children('a').attr('href','https://www.nate.com');
+		//속성지우기
+		$('a').removeAttr('href');
+		$('h1').removeAttr('id');
+		
+		//클래스 handler
+		// style시트의 클래스 조작하는 방법이다.
+		// addClass() : 클래스추가
+		$('#list>img').addClass('c1');
+		$('#list>img').addClass('c2');
+		
+		// removeClass() : 클래스 삭제
+		$("#list>img").removeClass('c2');
+		
+		// 짝수번째 : c3, 홀수번째 : c4
+		$("#list>img:even").addClass('c3');
+		$('#list>img:odd').addClass('c4');
+		
+		// toggleClass() : 클래스 있으면 지우고 없으면 추가 
+		$('#list>img').toggleClass('c3');
+		
+		// hasClass() : 클래스가 존재하는지 유무 확인 (true, false)
+		var h = $("#list>img:first").hasClass('c1');
+		console.log(h)
+		$('h1').html(h+"");
+		
+		// val() : 폼의 value를 구하거나 셋팅한다.
+		// html(), text(), attr(), prop()
+		
+	});
+</script>
+</head>
+<body>
+<div></div>
+<h1 id="obj1">객체 조작 1</h1>
+<h2><a href="">객체 조작 2</a></h2>
+<div id="result"></div>
+<div id="list">
+	<img src="../img/01.jfif"/>
+	<img src="../img/02.jfif"/>
+	<img src="../img/03.jfif"/>
+	<img src="../img/04.jfif"/>
+</div>
+</body>
+</html>
