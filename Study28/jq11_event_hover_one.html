@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<Style>
+	.s1{background-color:#f00; color:#fff;}
+	.s2{background-color:#0f0; color:#f00;}
+	.s3{background-color:#00f; color:#ff0;}
+	
+</Style>
+<script>
+	$(function(){
+		var cnt=0;
+	$('h1').hover(function(){//오버시
+		$(this).addClass('s1');
+		cnt++;
+		$("div").html("cnt="+cnt);
+		if(cnt>5){
+			$(this).off();//이벤트 중지
+		}
+	},function(){
+		$(this).removeClass('s1');
+	});
+	// one() : 이벤트 1번만 발생
+	$("h2").one('click',function(){
+		$(this).addClass('s2');
+		console.log("AAA")
+		});
+	});
+</script>
+</head>
+<body>
+<h1>hover 이벤트 처리 테스트 중....</h1>
+<h1>hover 이벤트 처리 테스트 중....</h1>
+<h1>hover 이벤트 처리 테스트 중....</h1>
+<h1>hover 이벤트 처리 테스트 중....</h1>
+<h1>hover 이벤트 처리 테스트 중....</h1>
+<h2>one 이벤트 처리 테스트 중....</h2>
+<h2>one 이벤트 처리 테스트 중....</h2>
+<h2>one 이벤트 처리 테스트 중....</h2>
+<h2>one 이벤트 처리 테스트 중....</h2>
+<h2>one 이벤트 처리 테스트 중....</h2>
+</body>
+</html>
