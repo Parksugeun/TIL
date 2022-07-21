@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+	div{float:left; width:126px; height:164px;}
+	img{position:absolute;}
+</style>
+<script>
+	$(function(){
+		// animate() : 객체를 이동시킨다. 속도: 'slow', 'fast','normal', 밀리초
+		// animate({JSon형식으로 속성설정}, 속도)
+		//			marginLeft, width, marginTop, opacity, marginRight
+		$("img:first").animate({marginLeft:"800px",marginTop:"500px", opacity:0.3}, 5000)
+					  .delay(3000).animate({marginTop:"10px", opacity:1}, 3000);
+		
+		$("img:eq(2)").animate({marginLeft:"700px", marginTop:"400px"}, 5000);
+		
+		//delay( ) : 출발을 지연시킨다.
+		$("img:eq(1)").animate({marginLeft:"900px", marginTop:"300px"}, 5000);
+		
+		//animate중지시키기
+		$('img').mouseover(function(){
+			$(this).stop();		// $(this).stop();
+		});
+		
+		$('img').mouseout(function(){
+			//$(this).animate({marginLeft:"700px", marginTop:"400px"}, 5000);
+		});
+	});
+</script>
+</head>
+<body>
+<div><img src="../javascript/movie_poster/m01.png"/></div>
+<div><img src="../javascript/movie_poster/m02.png"/></div>
+<div><img src="../javascript/movie_poster/m03.png"/></div>
+<div><img src="../javascript/movie_poster/m04.png"/></div>
+<div><img src="../javascript/movie_poster/m05.png"/></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--  
+	// http://jqueryui.com/easing/ -> API Doumention
+	// jqueryui가 필요함
+	// https://jqueryui.com/download/all에서 jquery-ui-1.13.2.zip을 다운로드 후 압축푼다.		
+	
+	1. jquery-ui.min.css 스타일시트
+	2. jquery.min.js
+	3. jquery-ui.min.js
+
+-->
+<link rel="stylesheet" href="/webApp/js_css/jquery-ui.min.css" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/webApp/js_css/jquery-ui.min.js"></script>
+<style>
+	img{position:relative;}
+</style>
+<script>
+	$(function(){
+		//easing : 움직이는 모양								easing종류
+		$("img").first().animate({marginLeft:"1200px"},6000,"easeOutBounce");
+		$("img:eq(1)").animate({marginLeft:"1000px"},5000, "easeOutBack");
+		
+	});
+</script>
+</head>
+<body>
+<div><img src="../javascript/movie_poster/m01.png"/></div>
+<div><img src="../javascript/movie_poster/m02.png"/></div>
+<div><img src="../javascript/movie_poster/m03.png"/></div>
+<div><img src="../javascript/movie_poster/m04.png"/></div>
+<div><img src="../javascript/movie_poster/m05.png"/></div>
+</body>
+</html>

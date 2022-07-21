@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("body").css("margin","0px");
+		
+		
+		
+		
+		$("body").append("<div id='pinkDiv'/>");
+		
+		$("#pinkDiv").css("height","40px").css("background-color","rgb(238,135,152)");
+		
+		$("body").append("<div id='blueDiv'/>");
+		$("#blueDiv").css("height","22px").css("background-color","rgb(84,174,200)");
+		
+		//이미지추가
+		$("body").append("<img src='../img/title_layer.gif'/>");
+		
+		var file = ['glass1.gif','glass2.gif','glass3.gif'];
+		var tag="";
+		file.map(function(value, idx){
+			tag += "<img src='../img/"+value+"'/>";
+			
+		})
+		$("body").append(tag);
+		
+		$("img").css("position","absolute");
+		$("img:first").css("top","0px");
+		
+		$("img").eq(1).css("left","310px").css("top","60px");
+		$("img").eq(2).css("left","450px").css("top","100px");
+		$("img").eq(3).css("left","380px").css("top","140px");
+	});
+	
+</script>
+</head>
+<body>
+</body>
+</html>
