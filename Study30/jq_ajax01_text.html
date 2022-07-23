@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("#result>button").click(function(){
+			// 서버에서 abcd.txt파일의 내용을 가져오기
+			// 					파일명
+			$("#result").load('abcd.txt');
+		});
+	});
+</script>
+</head>
+<body>
+<h1>jquery에서 ajax처리(text)</h1>
+<div id="result" style="background:#ddd;">
+	<button>클릭하시면 비동기식으로 text파일의 내용을 가져옴.</button>
+</div>
+</body>
+</html>

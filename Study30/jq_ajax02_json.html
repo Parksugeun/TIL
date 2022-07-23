@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("#ajaxBtn").on('click', function(){
+			//서버에서 json데이터 가져오기
+			$.ajax({
+				url: 'ajax_data.json', //서버에 접속할 대상
+				dataType:'json',
+				success:function(result){//서버에서 정상전송을 받았을 때
+					console.log(result);
+					$("#result").append("<ol type='1'>");
+					$.each(result.rank,function(idx, data){
+						//	<li>손흥민 : 영국	</li>
+						$("#result>ol").append("<li>"+ data.name + " : "+ data.local+ "</li>");
+					});
+					$("#result").append("</ol>")
+				},
+				error: function(request, status, error){//서버에서 전송을 받지 못했을 때
+					console.log("전송실패...");
+					console.log("request.code=",request.code);
+					console.log('error Message=', request.responseText);
+					console.log('error=', error);
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<button id='ajaxBtn'>클릭하면 비동기식으로 서버에서 json데이터 가져옴</button>
+<div id="result"></div>
+</body>
+</html>
