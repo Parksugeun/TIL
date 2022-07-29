@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body,ul,li{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	
+}
+header a:link, header a:visited, header a:hover{
+	text-decoration:none;
+	color:#fff;
+}
+
+header{
+	height:100px; 
+	background:olive; 
+	color:#fff;	
+}
+header>ul{
+	width:1200px;
+	margin:0 auto;
+}
+header>ul>li{
+	background:green;
+	float:left;
+	width:33%;
+	text-align:center;
+	height:40px;
+	line-height:40px;	
+}
+footer{
+	height:50px;
+	background:#ddd;
+	text-align:center;
+	margin-top:100px;
+}
+.container{
+	width:1200px;
+	margin:0 auto;
+}
