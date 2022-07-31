@@ -1,0 +1,54 @@
+@charset "UTF-8";
+body, ul, li{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+
+.container{
+	width:1200px;
+	overflow:auto;
+	margin:0 auto 50px;
+}
+a:link, a:visited, a:hover{
+	text-decoration:none;
+	color:#333;
+}
+
+/*메뉴*/
+#topMenu, #logo, #mainMenu>ul{
+	width:1200px;
+	margin:0 auto;
+}
+
+#topMenu{
+	background-color:#ddd;
+	text-align:right;
+}
+#logo{
+	text-align:center;
+	font-size:4em;
+	font-weight:bold;
+}
+#mainMenu li{
+	float:left;
+	width:200px;
+	height:50px;
+	line-height:50px;
+	font-size:1.3em;
+	text-align:center;
+	color:yellow;
+}
+#mainMenu {
+	background-color:olive;
+}
+#mainMenu ul{
+	overflow:auto;
+}
+
+.footer{
+	height:100px;
+	background:#aaa;
+	text-align:center;
+	padding: 50px 0;
+}
