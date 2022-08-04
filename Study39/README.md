@@ -1,0 +1,1 @@
+Spring boot ajax mybatis를 활용한 게시판을 만들고 있다. mysql을 활용하여 데이터베이스를 구축하였다.
