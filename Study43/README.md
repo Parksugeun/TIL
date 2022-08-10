@@ -1,0 +1,1 @@
+프로젝트로 진행하고 있는 메뉴추천의 웹사이트이다. MVC 형태로 springboot와 mysql , mybatis를 활용하여 제작하였다.
