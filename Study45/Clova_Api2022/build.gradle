@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.campus'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//뷰를 jsp로 사용하기 위해서 프레임워크를 추가한다.
+	// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.58'
+	// https://mvnrepository.com/artifact/javax.servlet/jstl
+	implementation 'javax.servlet:jstl:1.2'
+	
+	// https://mvnrepository.com/artifact/org.json/json
+	implementation 'org.json:json:20220320'
+	
+	// https://mvnrepository.com/artifact/net.morimekta.utils/android-util
+	implementation 'net.morimekta.utils:android-util:3.0.1'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
